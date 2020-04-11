@@ -12,3 +12,16 @@
 
 ## Goals
 - Overwrite the printer function.
+
+## Pseudo
+```c
+.bss:
+	void* notes[5];
+	int note_count;
+
+
+struct note {
+	void* printer_func;
+	char* content;
+}
+```
