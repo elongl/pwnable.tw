@@ -7,9 +7,9 @@
 - The same note can be freed twice (segfault) because the pointer isn't being nulled (use-after-free).
 
 
-## Thoughts & Leads
+## Leads
 - Setting the printer function to `system`, and the note to `"/bin/sh"` and print the node.
-- If both `malloc` calls would return the same pointer, it would be possible to overwrite the printer function.
+- If the content's `malloc` call would return a pointer to a note, it would be possible to overwrite the printer function.
 
 
 ## Goals
