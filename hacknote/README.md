@@ -9,19 +9,29 @@
 
 ## Thoughts & Leads
 - Setting the printer function to `system`, and the note to `"/bin/sh"` and print the node.
+- If both `malloc` calls would return the same pointer, it would be possible to overwrite the printer function.
+
 
 ## Goals
 - Overwrite the printer function.
 
+
 ## Pseudo
 ```c
 .bss:
-	void* notes[5];
+	Note* notes[5];
 	int note_count;
 
 
-struct note {
+typedef struct {
 	void* printer_func;
 	char* content;
-}
+} Note
+```
+
+
+## Allocation Chain
+```c
+- malloc(sizeof(Note));
+- malloc(atoi(buf));
 ```
