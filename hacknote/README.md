@@ -14,10 +14,12 @@
 
 ## Goals
 - [x] Overwrite the printer function.
+- [ ] Leak libc base address.
+- [ ] Place `"/bin/sh"` somewhere statically in memory, preferably `.bss`.
 
 
 ## Findings
-- If I create (allocate) two notes whose content's size is **different** than the one of the note's struct,  
+- If two notes are created (allocated) whose content's size is **different** than the one of the note's struct,  
   and then delete (free) them, the content's chunks will be inserted into `fastbin X`, while the note chunks will be inserted into `fastbin Y`.  
   Now, those fastbins look roughly like so:
   ```
@@ -29,9 +31,10 @@
   Y: HEAD -> NOTE CHUNK | NOTE CHUNK -> TAIL
   -------------------------------------------------
   ```
-  When I will create another note, but this time I will set the content's size to be the **same** as the note's size,  
-  and therefore it would match the `Y` fastbin, a note chunk would be popped and returned for the content's allocation,  
+  When another note will be created whose content's size is the **same** as the one of the note's struct,
+  it would match the `Y` fastbin, a note chunk would be popped and returned for the content's allocation,  
   allowing us to write values to the note struct, rather than to the content's buffer.
+- It is possible to overflow the heap completely using the note's content buffer which points to the note itself.
 
 
 
