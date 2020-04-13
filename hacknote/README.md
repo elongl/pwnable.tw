@@ -9,11 +9,11 @@
 
 ## Leads
 - Setting the printer function to `system`, and the note to `"/bin/sh"` and print the node.
-- If the content's `malloc` call would return a pointer to a note, it would be possible to overwrite the printer function (V)
+- If the content's `malloc` call would return a pointer to a note, it would be possible to overwrite the printer function.
 
 
 ## Goals
-- Overwrite the printer function. (V)
+- [x] Overwrite the printer function.
 
 
 ## Findings
