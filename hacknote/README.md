@@ -5,6 +5,7 @@
 - Value that is returned from `atoi` is signed, and then passed to `malloc` which is unsigned.
 - Printing a note after it was deleted attempts to call the printer function on the content, both of which had already been freed, causing a segfault (use-after-free).
 - The same note can be freed twice (segfault) because the pointer isn't being nulled (use-after-free).
+- I can use one of libc's strings that end with `"sh"` to spawn the shell.
 
 
 ## Leads
@@ -15,7 +16,6 @@
 ## Goals
 - [x] Overwrite the printer function.
 - [ ] Leak libc base address.
-- [ ] Place `"/bin/sh"` somewhere statically in memory, preferably `.bss`.
 
 
 ## Findings
