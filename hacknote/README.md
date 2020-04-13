@@ -16,7 +16,7 @@ it'll call `system(note_content)` rather than `puts(note_content)`.
 
 ## Goals
 - [x] Overwrite the printer function.
-- [ ] Leak libc base address.
+- [x] Leak libc base address.
 
 
 ## Findings
