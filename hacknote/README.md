@@ -9,8 +9,9 @@
 
 
 ## Leads
-- Setting the printer function to `system`, and the note to `"/bin/sh"` and print the node.
 - If the content's `malloc` call would return a pointer to a note, it would be possible to overwrite the printer function.
+- Overwriting `puts@got` to `system` so that when it's about to print the note,  
+it'll call `system(note_content)` rather than `puts(note_content)`.
 
 
 ## Goals
