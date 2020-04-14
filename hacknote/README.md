@@ -17,6 +17,7 @@ it'll call `system(note_content)` rather than `puts(note_content)`.
 - [x] Overwrite the printer function.
 - [x] Leak libc base address.
 - [ ] Overwrite `put@got` with `system`.
+- [x] Overwrite note's function pointer with `system`.
 
 
 ## Findings
