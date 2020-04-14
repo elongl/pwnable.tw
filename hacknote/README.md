@@ -38,7 +38,6 @@ it'll call `system(note_content)` rather than `puts(note_content)`.
 - It is possible to overflow the heap completely using the note's content buffer which points to the note itself.
 
 
-
 ## Pseudo
 ```c
 .bss:
