@@ -61,3 +61,4 @@ typedef struct {
 
 
 ## Defending
+- Null out the pointers after deleting them to prevent use-after-free.
