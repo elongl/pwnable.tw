@@ -11,3 +11,5 @@ EBX  0x0
 ECX  0x0
 EDX  0x9b181a0 ◂— 'AAAA'
 ```
+
+Shellcode length: up to 80 bytes.
